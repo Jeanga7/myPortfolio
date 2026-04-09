@@ -1,0 +1,131 @@
+{
+    "nodes": [
+        {
+            "id": "jg",
+            "title": "Jean-Gabriel Goudiaby",
+            "category": "core",
+            "size": 3,
+            "description": "Ingénieur Logiciel Full-Stack & Cybersécurité. Explorateur de technologies immersives.",
+            "tags": [
+                "Full-Stack",
+                "Security",
+                "3D",
+                "Leadership"
+            ]
+        },
+        {
+            "id": "rust",
+            "title": "Rust",
+            "category": "engineer",
+            "size": 1.5,
+            "description": "Performance et sécurité mémoire sans compromis.",
+            "tags": [
+                "Systems",
+                "WASM",
+                "Safety"
+            ]
+        },
+        {
+            "id": "go",
+            "title": "Go",
+            "category": "engineer",
+            "size": 1.5,
+            "description": "Scalabilité et simplicité pour les architectures cloud.",
+            "tags": [
+                "Backend",
+                "Microservices",
+                "Concurrency"
+            ]
+        },
+        {
+            "id": "cyber",
+            "title": "Cybersécurité",
+            "category": "engineer",
+            "size": 1.8,
+            "description": "Protection des actifs et audit de sécurité (DevSecOps).",
+            "tags": [
+                "Pentest",
+                "Security Audit",
+                "Encryption"
+            ]
+        },
+        {
+            "id": "nextjs",
+            "title": "Next.js",
+            "category": "engineer",
+            "size": 1.5,
+            "description": "Le framework React pour le web moderne.",
+            "tags": [
+                "React",
+                "SSR",
+                "Vercel"
+            ]
+        },
+        {
+            "id": "lianet",
+            "title": "Lianet",
+            "category": "builder",
+            "size": 2,
+            "description": "Squad as a Service : l'innovation collective.",
+            "tags": [
+                "Entrepreneurship",
+                "Product",
+                "Strategy"
+            ]
+        },
+        {
+            "id": "truecalling",
+            "title": "True Calling",
+            "category": "builder",
+            "size": 1.5,
+            "description": "Plateforme communautaire d'apprentissage.",
+            "tags": [
+                "Education",
+                "Platform",
+                "Community"
+            ]
+        },
+        {
+            "id": "scout",
+            "title": "Chef Scout",
+            "category": "strategist",
+            "size": 1.8,
+            "description": "Leadership, gestion de groupe et prise de décision sous pression.",
+            "tags": [
+                "Leadership",
+                "Management",
+                "Education"
+            ]
+        }
+    ],
+    "links": [
+        {
+            "source": "jg",
+            "target": "rust"
+        },
+        {
+            "source": "jg",
+            "target": "go"
+        },
+        {
+            "source": "jg",
+            "target": "cyber"
+        },
+        {
+            "source": "jg",
+            "target": "nextjs"
+        },
+        {
+            "source": "jg",
+            "target": "lianet"
+        },
+        {
+            "source": "jg",
+            "target": "truecalling"
+        },
+        {
+            "source": "jg",
+            "target": "scout"
+        }
+    ]
+}
