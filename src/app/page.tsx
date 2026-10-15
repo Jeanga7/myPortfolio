@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import HUD from '@/components/ui/HUD';
 
 const Scene = dynamic(() => import('@/components/canvas/Scene'), {
   ssr: false,
@@ -13,8 +14,9 @@ const Scene = dynamic(() => import('@/components/canvas/Scene'), {
 
 export default function Home() {
   return (
-    <main className="w-screen h-screen overflow-hidden bg-slate-950">
+    <main className="relative w-screen h-screen bg-[#05070A] overflow-hidden">
       <Scene />
+      <HUD />
     </main>
   );
 }

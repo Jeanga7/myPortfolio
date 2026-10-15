@@ -2,130 +2,132 @@
     "nodes": [
         {
             "id": "jg",
-            "title": "Jean-Gabriel Goudiaby",
+            "title": "JG Goudiaby",
             "category": "core",
+            "level": 1,
+            "color": "#FF007F",
             "size": 3,
-            "description": "Ingénieur Logiciel Full-Stack & Cybersécurité. Explorateur de technologies immersives.",
-            "tags": [
-                "Full-Stack",
-                "Security",
-                "3D",
-                "Leadership"
-            ]
+            "description": "Independant Fullstack Engineer & Entrepreneur"
+        },
+        {
+            "id": "engineering",
+            "title": "Engineering",
+            "category": "orbit",
+            "level": 2,
+            "parentId": "jg",
+            "color": "#00F2FF",
+            "size": 2,
+            "description": "Technical expertise & cloud architecture"
+        },
+        {
+            "id": "entrepreneurship",
+            "title": "Strategy",
+            "category": "orbit",
+            "level": 2,
+            "parentId": "jg",
+            "color": "#FFB000",
+            "size": 2,
+            "description": "Business strategy & product vision"
+        },
+        {
+            "id": "community",
+            "title": "Community",
+            "category": "orbit",
+            "level": 2,
+            "parentId": "jg",
+            "color": "#B800FF",
+            "size": 2,
+            "description": "Leadership & mentoring"
         },
         {
             "id": "rust",
             "title": "Rust",
-            "category": "engineer",
-            "size": 1.5,
-            "description": "Performance et sécurité mémoire sans compromis.",
-            "tags": [
-                "Systems",
-                "WASM",
-                "Safety"
-            ]
+            "category": "detail",
+            "level": 3,
+            "parentId": "engineering",
+            "color": "#00F2FF",
+            "size": 1,
+            "description": "Systems programming & performance"
         },
         {
             "id": "go",
             "title": "Go",
-            "category": "engineer",
-            "size": 1.5,
-            "description": "Scalabilité et simplicité pour les architectures cloud.",
-            "tags": [
-                "Backend",
-                "Microservices",
-                "Concurrency"
-            ]
-        },
-        {
-            "id": "cyber",
-            "title": "Cybersécurité",
-            "category": "engineer",
-            "size": 1.8,
-            "description": "Protection des actifs et audit de sécurité (DevSecOps).",
-            "tags": [
-                "Pentest",
-                "Security Audit",
-                "Encryption"
-            ]
-        },
-        {
-            "id": "nextjs",
-            "title": "Next.js",
-            "category": "engineer",
-            "size": 1.5,
-            "description": "Le framework React pour le web moderne.",
-            "tags": [
-                "React",
-                "SSR",
-                "Vercel"
-            ]
+            "category": "detail",
+            "level": 3,
+            "parentId": "engineering",
+            "color": "#00F2FF",
+            "size": 1,
+            "description": "Distributed systems & microservices"
         },
         {
             "id": "lianet",
-            "title": "Lianet",
-            "category": "builder",
-            "size": 2,
-            "description": "Squad as a Service : l'innovation collective.",
-            "tags": [
-                "Entrepreneurship",
-                "Product",
-                "Strategy"
-            ]
+            "title": "LiaNet",
+            "category": "detail",
+            "level": 3,
+            "parentId": "entrepreneurship",
+            "color": "#FFB000",
+            "size": 1,
+            "description": "AI-powered networking platform"
         },
         {
             "id": "truecalling",
-            "title": "True Calling",
-            "category": "builder",
-            "size": 1.5,
-            "description": "Plateforme communautaire d'apprentissage.",
-            "tags": [
-                "Education",
-                "Platform",
-                "Community"
-            ]
+            "title": "TrueCalling",
+            "category": "detail",
+            "level": 3,
+            "parentId": "entrepreneurship",
+            "color": "#FFB000",
+            "size": 1,
+            "description": "Finding purpose in professional paths"
         },
         {
-            "id": "scout",
-            "title": "Chef Scout",
-            "category": "strategist",
-            "size": 1.8,
-            "description": "Leadership, gestion de groupe et prise de décision sous pression.",
-            "tags": [
-                "Leadership",
-                "Management",
-                "Education"
-            ]
-        }
-    ],
-    "links": [
-        {
-            "source": "jg",
-            "target": "rust"
+            "id": "typescript",
+            "title": "TypeScript",
+            "category": "detail",
+            "level": 3,
+            "parentId": "engineering",
+            "color": "#00F2FF",
+            "size": 1,
+            "description": "NextJS & modern web architecture"
         },
         {
-            "source": "jg",
-            "target": "go"
+            "id": "cybersecurity",
+            "title": "Cybersecurity",
+            "category": "detail",
+            "level": 3,
+            "parentId": "engineering",
+            "color": "#00F2FF",
+            "size": 1,
+            "description": "Ethical malware research & DevSecOps"
         },
         {
-            "source": "jg",
-            "target": "cyber"
+            "id": "opensource",
+            "title": "Open Source",
+            "category": "detail",
+            "level": 3,
+            "parentId": "community",
+            "color": "#B800FF",
+            "size": 1,
+            "description": "Active contributor to global tech community"
         },
         {
-            "source": "jg",
-            "target": "nextjs"
+            "id": "peer-learning",
+            "title": "Peer-Learning",
+            "category": "detail",
+            "level": 3,
+            "parentId": "community",
+            "color": "#B800FF",
+            "size": 1,
+            "description": "Collaborative training at Zone 01 Dakar"
         },
         {
-            "source": "jg",
-            "target": "lianet"
-        },
-        {
-            "source": "jg",
-            "target": "truecalling"
-        },
-        {
-            "source": "jg",
-            "target": "scout"
+            "id": "mentoring",
+            "title": "Leadership",
+            "category": "detail",
+            "level": 3,
+            "parentId": "community",
+            "color": "#B800FF",
+            "size": 1,
+            "description": "Squad-as-a-Service model development"
         }
     ]
 }

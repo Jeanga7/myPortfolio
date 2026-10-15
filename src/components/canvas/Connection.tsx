@@ -11,14 +11,25 @@ interface ConnectionProps {
     color?: string;
 }
 
+interface LineHandle {
+    material?: THREE.Material & {
+        opacity?: number;
+    };
+}
+
 export default function Connection({ start, end, color = '#334155' }: ConnectionProps) {
     const lineRef = useRef<any>(null);
+    const dashRef = useRef(0);
 
-    useFrame((state) => {
-        if (lineRef.current) {
-            // Subtle pulsing effect on opacity or dash offset
-            const pulse = Math.sin(state.clock.elapsedTime * 2) * 0.2 + 0.8;
-            lineRef.current.material.opacity = 0.3 * pulse;
+    useFrame((state, delta) => {
+        if (lineRef.current?.material) {
+            // Neural pulse animation: scrolling dashes
+            dashRef.current -= delta * 0.5;
+            lineRef.current.material.dashOffset = dashRef.current;
+
+            // Subtle overall opacity pulse
+            const pulse = Math.sin(state.clock.elapsedTime * 2) * 0.1 + 0.9;
+            lineRef.current.material.opacity = 0.4 * pulse;
         }
     });
 
@@ -32,9 +43,13 @@ export default function Connection({ start, end, color = '#334155' }: Connection
             ref={lineRef}
             points={points}
             color={color}
-            lineWidth={0.5}
+            lineWidth={0.8}
             transparent
-            opacity={0.3}
+            opacity={0.4}
+            dashed
+            dashScale={5}
+            dashSize={0.2}
+            gapSize={0.1}
         />
     );
 }
