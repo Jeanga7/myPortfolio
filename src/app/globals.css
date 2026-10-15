@@ -1,69 +1,56 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0f172a;
-  --foreground: #f8fafc;
+  --background: #f7f3eb;
+  --foreground: #24231f;
+  --muted: #625e56;
+  --accent: #f4652b;
+  --border: #d5cec2;
+  --font-body: Arial, Helvetica, sans-serif;
+  --content-width: 68rem;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-nunito: var(--font-nunito);
-  --font-lato: var(--font-lato);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-body);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* { box-sizing: border-box; }
+html { scroll-padding-top: 2rem; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-body); line-height: 1.6; }
+a { text-underline-offset: 0.25em; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--foreground); outline-offset: 5px; }
+.container { width: min(100% - 2 * var(--gutter), var(--content-width)); margin-inline: auto; }
+.site-header, .site-footer { display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; }
+.site-header { padding-block: 1.5rem; border-bottom: 1px solid var(--border); }
+.identity { display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+.monogram { display: inline-grid; place-items: center; width: 2.75rem; height: 2.75rem; background: var(--foreground); color: var(--background); font-weight: 700; }
+nav { display: flex; gap: clamp(1rem, 3vw, 2rem); }
+nav a { display: inline-flex; align-items: center; min-height: 44px; }
+.introduction { padding-block: clamp(4rem, 10vw, 7rem); max-width: 45rem; }
+.eyebrow { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; }
+h1 { margin-block: 1rem; font-size: clamp(3rem, 8vw, 4.5rem); font-weight: 600; letter-spacing: -0.05em; line-height: 1.1; }
+.signature-dot { color: var(--accent); }
+.role { font-size: clamp(1.05rem, 3vw, 1.35rem); }
+.intro-note { margin-top: 1rem; color: var(--muted); }
+.primary-link { display: inline-flex; align-items: center; gap: 1.5rem; margin-top: 2rem; padding: 0.75rem 1.25rem; background: var(--accent); color: var(--foreground); font-weight: 600; text-decoration: none; }
+.primary-link:hover { text-decoration: underline; }
+.profile-section { display: grid; grid-template-columns: 1fr 1.4fr; gap: 3rem; padding-block: 3rem 4rem; border-top: 1px solid var(--border); }
+h2 { font-size: 1.4rem; line-height: 1.35; font-weight: 600; }
+.profile-section p + p { margin-top: 1rem; }
+.profile-links { display: flex; flex-wrap: wrap; gap: 0.75rem 2rem; margin-top: 1.5rem; }
+.profile-links a { padding-block: 0.6rem; }
+.site-footer { padding-block: 1.5rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+.skip-link { position: absolute; left: var(--gutter); top: 0.5rem; z-index: 10; padding: 0.75rem; background: var(--foreground); color: var(--background); transform: translateY(-200%); }
+.skip-link:focus { transform: translateY(0); }
+@media (max-width: 40rem) {
+  .profile-section { grid-template-columns: 1fr; gap: 1.5rem; }
+  .site-footer { align-items: flex-start; flex-direction: column; gap: 0.5rem; }
 }
-
-html,
-body {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background-color: var(--background);
-  color: var(--foreground);
-}
-
-.font-lato {
-  font-family: var(--font-lato), sans-serif;
-}
-
-@keyframes shimmer {
-  0% {
-    transform: translateX(-100%);
-  }
-
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-.animate-shimmer {
-  position: relative;
-  overflow: hidden;
-}
-
-.animate-shimmer::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(255, 255, 255, 0.1),
-      transparent);
-  animation: shimmer 2s infinite;
-}
-
-.vignette {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.6) 100%);
-  z-index: 50;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }

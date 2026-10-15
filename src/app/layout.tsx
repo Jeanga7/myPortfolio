@@ -1,79 +1,36 @@
 import type { Metadata } from "next";
-import { Nunito, Lato } from "next/font/google";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { profile } from "@/lib/profile";
 import "./globals.css";
 
-const nunito = Nunito({
-  variable: "--font-nunito",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-
-const lato = Lato({
-  variable: "--font-lato",
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://jean-gabriel-goudiaby.vercel.app";
+const siteUrl = process.env.SITE_URL;
+const title = `${profile.name} — ${profile.role}`;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: "Jean-Gabriel Goudiaby | Ingénieur Full-Stack & Entrepreneur",
-  description:
-    "Portfolio de Jean-Gabriel Goudiaby, ingénieur full-stack et entrepreneur. Go, Rust, React, architectures cloud et expériences web immersives.",
-  keywords: [
-    "Jean-Gabriel Goudiaby",
-    "Full-Stack Engineer",
-    "Go",
-    "Rust",
-    "React",
-    "Next.js",
-    "Three.js",
-    "Cloud Architecture",
-    "Portfolio",
-  ],
-  alternates: {
-    canonical: "/",
-  },
+  ...(siteUrl ? { metadataBase: new URL(siteUrl), alternates: { canonical: "/" } } : {}),
+  title,
+  description: profile.description,
+  authors: [{ name: profile.name, url: profile.github }],
   openGraph: {
-    title: "Jean-Gabriel Goudiaby | Ingénieur Full-Stack & Entrepreneur",
-    description:
-      "Go, Rust, React, architecture cloud et produits interactifs. Découvrez mon univers technologique, mes projets et mon parcours.",
-    url: "/",
-    siteName: "Jean-Gabriel Goudiaby",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Jean-Gabriel Goudiaby, ingénieur full-stack et entrepreneur",
-      },
-    ],
+    title,
+    description: profile.description,
+    siteName: "Gaby · jeanga7",
     locale: "fr_FR",
     type: "website",
+    ...(siteUrl ? { url: siteUrl } : {}),
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Jean-Gabriel Goudiaby | Ingénieur Full-Stack & Entrepreneur",
-    description:
-      "Portfolio interactif 3D autour de l'ingénierie logicielle, du cloud et de la création de produits.",
-    images: ["/opengraph-image"],
-  },
+  twitter: { card: "summary_large_image", title, description: profile.description },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="fr"
-      className={`${nunito.variable} ${lato.variable} h-full antialiased`}
-    >
-      <body className="bg-slate-900 text-slate-50 overflow-hidden font-lato">
+    <html lang="fr">
+      <body>
+        <a className="skip-link" href="#contenu">Aller au contenu</a>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

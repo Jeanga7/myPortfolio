@@ -1,22 +1,17 @@
-'use client';
-
-import dynamic from 'next/dynamic';
-import HUD from '@/components/ui/HUD';
-
-const Scene = dynamic(() => import('@/components/canvas/Scene'), {
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-screen flex items-center justify-center bg-slate-900 text-slate-400 font-mono">
-      <div className="animate-pulse">INITIALIZING_SPACE_STATION...</div>
-    </div>
-  ),
-});
+import { Profile } from "@/components/sections/Profile";
+import { profile } from "@/lib/profile";
 
 export default function Home() {
   return (
-    <main className="relative w-screen h-screen bg-[#05070A] overflow-hidden">
-      <Scene />
-      <HUD />
+    <main id="contenu" className="container" tabIndex={-1}>
+      <section id="presentation" className="introduction" aria-labelledby="intro-title">
+        <p className="eyebrow">The Living Signature</p>
+        <h1 id="intro-title">Gaby<span className="signature-dot">.</span></h1>
+        <p className="role">{profile.role}</p>
+        <p className="intro-note">Une approche personnelle de l’ingénierie logicielle.</p>
+        <a className="primary-link" href="#profil">Faire connaissance <span aria-hidden="true">↓</span></a>
+      </section>
+      <Profile />
     </main>
   );
 }
