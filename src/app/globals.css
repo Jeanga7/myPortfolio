@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fff9e7;
   --foreground: #171717;
 }
 
@@ -21,3 +21,18 @@ h1, h2, h3, header a { font-family: var(--font-nunito), sans-serif; }
 a { color: inherit; }
 
 :focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+
+.approved-hero-surface {
+  min-height: 100svh;
+  background: #fff9e7;
+}
+
+.approved-hero-header {
+  padding: 22px 4.75vw;
+}
+
+.approved-hero-monogram {
+  display: block;
+  width: 58px;
+  height: auto;
+}
