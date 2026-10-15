@@ -1,17 +1,24 @@
 import type { Metadata } from "next";
-import { Lato, Nunito } from "next/font/google";
+import { Caveat, Momo_Trust_Display, Onest } from "next/font/google";
 import "./globals.css";
 
-const nunito = Nunito({
-  variable: "--font-nunito",
+const momoTrustDisplay = Momo_Trust_Display({
+  weight: "400",
+  variable: "--font-momo-trust-display",
   subsets: ["latin"],
   display: "swap",
 });
 
-const lato = Lato({
-  variable: "--font-lato",
+const onest = Onest({
+  variable: "--font-onest",
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
+const caveat = Caveat({
+  variable: "--font-caveat",
+  subsets: ["latin"],
   display: "swap",
 });
 
@@ -24,7 +31,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={`${nunito.variable} ${lato.variable}`}>
+    <html lang="fr" className={`${momoTrustDisplay.variable} ${onest.variable} ${caveat.variable}`}>
       <body>{children}</body>
     </html>
   );
